@@ -1,12 +1,13 @@
-﻿using ApplicationCore.Abstractions;
+﻿using ApplicationCore.Common.Abstractions;
 using ApplicationCore.Entities;
+using ApplicationCore.Services.Abstractions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ApplicationCore
+namespace ApplicationCore.Services
 {
     public class ProductService : IProductService
     {

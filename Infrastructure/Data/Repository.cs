@@ -1,4 +1,4 @@
-﻿using ApplicationCore.Abstractions;
+﻿using ApplicationCore.Common.Abstractions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
