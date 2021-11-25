@@ -5,10 +5,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ApplicationCore.Product
+namespace Infrastructure.Data
 {
     public class Repository<T> : IRepository<T>
     {
+        private readonly ApplicationDbContext _applicationDbContext;
+
+        public Repository(ApplicationDbContext applicationDbContext)
+        {
+            _applicationDbContext = applicationDbContext;
+        }
+
         public Task<T> AddAsync(T entity)
         {
             throw new NotImplementedException();
