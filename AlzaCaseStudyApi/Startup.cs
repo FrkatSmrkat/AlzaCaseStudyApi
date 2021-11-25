@@ -1,3 +1,4 @@
+using ApplicationCore;
 using Infrastructure;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -28,6 +29,7 @@ namespace AlzaCaseStudyApi
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddInfrastructure(Configuration);
+            services.AddApplicationCore();
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
