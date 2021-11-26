@@ -1,13 +1,8 @@
 ﻿using Infrastructure.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.EntityFrameworkCore;
-
 using Microsoft.Extensions.DependencyInjection;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using ApplicationCore.Common.Abstractions;
 
 namespace Infrastructure
 {
@@ -19,6 +14,8 @@ namespace Infrastructure
                 options.UseSqlServer(
                     configuration.GetConnectionString("DefaultConnection"),
                     b => b.MigrationsAssembly(typeof(ApplicationDbContext).Assembly.FullName)));
+
+            services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
 
             return services;
         }
