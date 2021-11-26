@@ -1,5 +1,6 @@
 ﻿using ApplicationCore.Services.Abstractions;
 using ApplicationCore.Settings;
+using Microsoft.Extensions.Options;
 using System;
 
 namespace ApplicationCore.Services
@@ -7,14 +8,15 @@ namespace ApplicationCore.Services
     public class UriService : IUriService
     {
         private readonly ProductSettings _productSettings;
-        public UriService(ProductSettings productSettings)
+        private readonly string FAKE_URI = "fakeUri";
+        public UriService(IOptions<ProductSettings> productSettings)
         {
-            _productSettings = productSettings;
+            _productSettings = productSettings.Value;
         }
 
         public Uri GetProductPictureUri(string uriTemplate)
         {
-            return new Uri(uriTemplate.Replace("", _productSettings.ProductImageBaseUri));
+            return new Uri(uriTemplate.Replace(FAKE_URI, _productSettings.ProductImageBaseUri));
         }
     }
 }

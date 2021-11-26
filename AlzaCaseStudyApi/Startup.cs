@@ -29,7 +29,7 @@ namespace AlzaCaseStudyApi
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddInfrastructure(Configuration);
-            services.AddApplicationCore();
+            services.AddApplicationCore(Configuration);
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
