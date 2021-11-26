@@ -13,6 +13,6 @@ namespace ApplicationCore.Common.Abstractions
         Task UpdateAsync(T entity);
         Task<int> CountAsync();
         public Task<List<T>> GetListAsync();
-        public Task<List<T>> GetListPage(int pageSize, int pageNumber, Func<T, object> orderExpression);
+        public Task<List<T>> GetListPage(int pageNumber, int pageSize, Func<T, object> orderExpression);
     }
 }

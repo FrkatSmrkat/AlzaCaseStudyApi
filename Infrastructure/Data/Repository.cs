@@ -36,13 +36,13 @@ namespace Infrastructure.Data
 
         public async Task<List<T>> GetListAsync()
         {
-            var list = await _applicationDbContext.Set<T>().ToListAsync();
-            return list;
+            var entityList = await _applicationDbContext.Set<T>().ToListAsync();
+            return entityList;
         }
 
-        public async Task<List<T>> GetListPage(int pageSize, int pageNumber, Func<T, object> orderExpression)
+        public async Task<List<T>> GetListPage(int pageNumber, int pageSize, Func<T, object> orderExpression)
         {
-            var list = await _applicationDbContext
+            var entityList = await _applicationDbContext
                 .Set<T>()
                 .OrderBy(orderExpression)
                 .AsQueryable()
@@ -50,7 +50,7 @@ namespace Infrastructure.Data
                 .Take(pageSize)
                 .ToListAsync();
 
-            return list;
+            return entityList;
 
         }
 
