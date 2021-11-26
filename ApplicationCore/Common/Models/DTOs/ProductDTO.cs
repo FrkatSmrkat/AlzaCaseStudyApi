@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ApplicationCore.Entities
+namespace ApplicationCore.Common.Models.DTOs
 {
-    public class Product
+    public class ProductDTO
     {
         public int Id { get; set; }
-        public string Name { get; set; }    
-        public string ImgUri { get; set; }
+        public string Name { get; set; }
+        public Uri ImgUri { get; set; }
         public decimal Price { get; set; }
         public string Description { get; set; }
     }
