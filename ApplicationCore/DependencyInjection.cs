@@ -14,6 +14,8 @@ namespace ApplicationCore
         public static IServiceCollection AddApplicationCore(this IServiceCollection services)
         {
             services.AddScoped<IProductService, ProductService>();
+            //TODO: probably options builder for uriService
+            services.AddSingleton<IUriService, UriService>();
             return services;
         }
     }
