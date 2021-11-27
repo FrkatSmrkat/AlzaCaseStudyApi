@@ -22,9 +22,13 @@ namespace PublicApi.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<ProductDTO>> GetById([FromQuery] int id)
+        public async Task<ActionResult<ProductDTO>> GetById([FromQuery] GetByIdRequest request)
         {
-            var product = await _productService.GetByIdAsync(id);
+            var product = await _productService.GetByIdAsync(request.Id);
+
+            if (product == null)
+                return NotFound();
+
             return Ok(product);
         }
 
@@ -36,16 +40,21 @@ namespace PublicApi.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<PaginatedList<ProductDTO>>> GetPaginatedList([FromQuery] int pageNmuber, [FromQuery] int pageSize)
+        public async Task<ActionResult<PaginatedList<ProductDTO>>> GetPaginatedList([FromQuery] GetPaginatedListRequest request)
         {
-            var products = await _productService.GetPaginatedListAsync(pageNmuber, pageSize);
+            var products = await _productService.GetPaginatedListAsync(request.PageNumber, request.PageSize);
+
             return Ok(products);
         }
 
         [HttpPost]
-        public async Task<ActionResult<ProductDTO>> UpdateDescription([FromBody] ProductDTO productDTO)
+        public async Task<ActionResult<ProductDTO>> UpdateDescription([FromBody] UpdateDescriptionRequest request)
         {
-            var product = await _productService.UpdateDescriptionAsync(productDTO.Id, productDTO.Description);
+            var product = await _productService.UpdateDescriptionAsync(request.Id, request.Description);
+
+            if (product == null)
+                return NotFound();
+
             return Ok(product);
         }
     }
