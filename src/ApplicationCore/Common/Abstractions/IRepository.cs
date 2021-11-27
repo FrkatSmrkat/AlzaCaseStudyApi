@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -13,6 +14,6 @@ namespace ApplicationCore.Common.Abstractions
         Task UpdateAsync(T entity);
         Task<int> CountAsync();
         public Task<List<T>> GetListAsync();
-        public Task<List<T>> GetListPage(int pageNumber, int pageSize, Func<T, object> orderExpression);
+        public Task<List<T>> GetListPage(int pageNumber, int pageSize, Expression<Func<T, object>> orderExpression);
     }
 }

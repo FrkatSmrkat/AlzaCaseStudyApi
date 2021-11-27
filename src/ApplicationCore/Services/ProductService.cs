@@ -47,6 +47,9 @@ namespace ApplicationCore.Services
         {
             var product = await _productRepository.GetByIdAsync(id);
 
+            if (product == null)
+                return null;
+
             var result = MapToDTO(product);
 
             return result;
@@ -57,7 +60,7 @@ namespace ApplicationCore.Services
             var productCount = await _productRepository.CountAsync();
 
             var productList = await _productRepository
-                .GetListPage( pageNumber, pageSize, x => x.Id);
+                .GetListPage(pageNumber, pageSize, x => x.Id);
 
             var result = productList
                 .Select(product => MapToDTO(product))
@@ -68,13 +71,16 @@ namespace ApplicationCore.Services
 
         public async Task<ProductDTO> UpdateDescriptionAsync(int id, string newDescription)
         {
-            var entity = await _productRepository.GetByIdAsync(id);
+            var product = await _productRepository.GetByIdAsync(id);
 
-            entity.Description = newDescription;
+            if (product == null)
+                return null;
 
-            await _productRepository.UpdateAsync(entity);
+            product.Description = newDescription;
 
-            return MapToDTO(entity);
+            await _productRepository.UpdateAsync(product);
+
+            return MapToDTO(product);
         }
     }
 }

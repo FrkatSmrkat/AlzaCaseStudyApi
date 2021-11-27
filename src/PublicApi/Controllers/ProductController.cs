@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace AlzaCaseStudyApi.Controllers
+namespace PublicApi.Controllers
 {
 
     [ApiController]
@@ -35,7 +35,8 @@ namespace AlzaCaseStudyApi.Controllers
             return Ok(products);
         }
 
-        public async Task<ActionResult<PaginatedList<ProductDTO>>> GetPaginatedList(int pageNmuber, int pageSize)
+        [HttpGet]
+        public async Task<ActionResult<PaginatedList<ProductDTO>>> GetPaginatedList([FromQuery] int pageNmuber, [FromQuery] int pageSize)
         {
             var products = await _productService.GetPaginatedListAsync(pageNmuber, pageSize);
             return Ok(products);

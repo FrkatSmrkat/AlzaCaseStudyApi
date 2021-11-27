@@ -14,7 +14,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace AlzaCaseStudyApi
+namespace PublicApi
 {
     public class Startup
     {

@@ -8,7 +8,8 @@ namespace ApplicationCore.Services
     public class UriService : IUriService
     {
         private readonly ProductSettings _productSettings;
-        private readonly string FAKE_URI = "fakeUri";
+        private readonly string FAKE_URI_START = "fakeUriStart";
+
         public UriService(IOptions<ProductSettings> productSettings)
         {
             _productSettings = productSettings.Value;
@@ -16,7 +17,7 @@ namespace ApplicationCore.Services
 
         public Uri GetProductPictureUri(string uriTemplate)
         {
-            return new Uri(uriTemplate.Replace(FAKE_URI, _productSettings.ProductImageBaseUri));
+            return new Uri(uriTemplate.Replace(FAKE_URI_START, _productSettings.ProductImageBaseUri));
         }
     }
 }

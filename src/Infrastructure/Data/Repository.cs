@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -40,12 +41,11 @@ namespace Infrastructure.Data
             return entityList;
         }
 
-        public async Task<List<T>> GetListPage(int pageNumber, int pageSize, Func<T, object> orderExpression)
+        public async Task<List<T>> GetListPage(int pageNumber, int pageSize, Expression<Func<T, object>> orderExpression)
         {
             var entityList = await _applicationDbContext
                 .Set<T>()
                 .OrderBy(orderExpression)
-                .AsQueryable()
                 .Skip((pageNumber - 1) * pageSize)
                 .Take(pageSize)
                 .ToListAsync();
