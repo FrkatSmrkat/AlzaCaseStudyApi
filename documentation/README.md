@@ -32,6 +32,6 @@ https://github.com/ardalis/Specification.git
 
 
 # Shortcomings
-No authorization/authentication  
+ApiKey is not great in general. Storing key in appsettings is bad. But its easy to write and the edit endpoint isnt open.
 Low test coverage  
-visual studio does not create folders for soluion folders .. so new items added into root of solution folders are added into root
+Visual studio does not create folders for soluion folders .. so new items added into root of solution folders are added into root

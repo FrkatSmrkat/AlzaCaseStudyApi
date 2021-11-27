@@ -1,5 +1,5 @@
 ﻿using ApplicationCore.Services.Abstractions;
-using ApplicationCore.Settings;
+using ApplicationCore.Configurations;
 using Microsoft.Extensions.Options;
 using System;
 

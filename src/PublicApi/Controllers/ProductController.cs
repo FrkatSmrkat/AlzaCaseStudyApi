@@ -3,6 +3,7 @@ using ApplicationCore.Common.Models;
 using ApplicationCore.Common.Models.DTOs;
 using ApplicationCore.Entities;
 using ApplicationCore.Services.Abstractions;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -48,6 +49,7 @@ namespace PublicApi.Controllers
         }
 
         [HttpPost]
+        [Authorize]
         public async Task<ActionResult<ProductDTO>> UpdateDescription([FromBody] UpdateDescriptionRequest request)
         {
             var product = await _productService.UpdateDescriptionAsync(request.Id, request.Description);

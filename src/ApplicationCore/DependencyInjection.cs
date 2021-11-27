@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using ApplicationCore.Services;
 using ApplicationCore.Services.Abstractions;
-using ApplicationCore.Settings;
+using ApplicationCore.Configurations;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Configuration;
 

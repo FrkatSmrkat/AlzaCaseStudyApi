@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ApplicationCore.Settings
+namespace ApplicationCore.Configurations
 {
     public class ProductSettings
     {
