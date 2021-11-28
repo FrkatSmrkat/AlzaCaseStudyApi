@@ -14,7 +14,7 @@ ApplicationCore - application logic layer
 
 
 ## Reference projects
-*projects used as  inspiration*
+*projects used as  inspiration*  
 https://github.com/dotnet/AspNetCore.Docs.git  
 https://github.com/dotnet-architecture/eShopOnWeb.git  
 https://github.com/ardalis/CleanArchitecture.git  
