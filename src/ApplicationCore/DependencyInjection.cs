@@ -16,8 +16,11 @@ namespace ApplicationCore
         public static IServiceCollection AddApplicationCore(this IServiceCollection services, IConfiguration configuration)
         {
             services.Configure<ProductSettings>(configuration.GetSection("ProductSettings"));
+
             services.AddScoped<IProductService, ProductService>();
+
             services.AddSingleton<IUriService, UriService>();
+
             return services;
         }
     }
