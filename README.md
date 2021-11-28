@@ -7,7 +7,7 @@ ASP.NET 5
 Entity Framework Core 5
 
 ## Architecture
-Based on Clean Architecture with merging domain into application since we have no domain logic
+Based on Clean Architecture with merging domain into application since we have no domain logic  
 PublicApi - presentation layer  
 Infrastructure - data layer  
 ApplicationCore - application logic layer  
