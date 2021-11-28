@@ -39,3 +39,4 @@ ApiKey is not great in general. Storing key in appsettings is bad. But its easy 
 Tests .. Only integration tests for get endpoints. No unit tests.  
 Database seed should not be in configuration. Only one migration.      
 Visual studio does not create folders for soluion folders .. so new items added into root of solution folders are added into root.  
+Missing logging  
