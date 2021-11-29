@@ -31,7 +31,8 @@ Run from .exe in /bin folder or in debug from vs
 
 # Tests
 One integration test in /tests folder.  
-Swagger when running in debug
+Swagger when running in debug  
+Endpoint UpdateDescription is protected with ApiKey. ApiKey is set in PublicApi/appsettings.json. All the other endpoints are not protected.  
 
 
 # Shortcomings
