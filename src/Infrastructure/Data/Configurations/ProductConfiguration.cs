@@ -38,7 +38,7 @@ namespace Infrastructure.Data.Configurations
                 {
                     Id = 1,
                     Price = 10,
-                    ImgUri = "http://ahoj.ahoj/1",
+                    ImgUri = "fakeUriStart/1",
                     Description = "ahoj1 je dobry",
                     Name = "ahoj1"
                 },
@@ -46,7 +46,7 @@ namespace Infrastructure.Data.Configurations
                 {
                     Id = 2,
                     Price = 20,
-                    ImgUri = "http://ahoj.ahoj/2",
+                    ImgUri = "fakeUriStart/2",
                     Description = "ahoj2 je dobry",
                     Name = "ahoj2"
                 },
@@ -54,7 +54,7 @@ namespace Infrastructure.Data.Configurations
                 {
                     Id = 3,
                     Price = 30,
-                    ImgUri = "http://ahoj.ahoj/3",
+                    ImgUri = "fakeUriStart/3",
                     Description = "ahoj3 je dobry",
                     Name = "ahoj3"
                 });
